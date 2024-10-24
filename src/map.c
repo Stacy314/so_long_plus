@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anastasiia <anastasiia@student.42.fr>      +#+  +:+       +#+        */
+/*   By: apechkov <apechkov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:44:06 by apechkov          #+#    #+#             */
-/*   Updated: 2024/10/14 14:06:27 by anastasiia       ###   ########.fr       */
+/*   Updated: 2024/10/24 19:30:19 by apechkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,9 @@ void get_map_size(t_game *game, char *filename)
     game->map_width = 0;
     game->map_height = 0;
     fd = open(filename, O_RDONLY);
+    printf("fd: %d\n", fd);
+	printf("filename: %s\n", filename);
+
     if (fd < 0)
         exit_with_error("Can't open map file");
     while ((line = get_next_line(fd)))
@@ -129,6 +132,7 @@ void get_map_size(t_game *game, char *filename)
         game->map_height++;
         free(line);
     }
+    free(line);
     close(fd);
 }
 
