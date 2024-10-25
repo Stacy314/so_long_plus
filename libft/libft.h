@@ -6,7 +6,7 @@
 /*   By: apechkov <apechkov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:29:23 by apechkov          #+#    #+#             */
-/*   Updated: 2024/10/24 19:24:11 by apechkov         ###   ########.fr       */
+/*   Updated: 2024/09/11 15:59:44 by apechkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <stdio.h>
-# include <fcntl.h>
 
 typedef struct s_list
 {
@@ -85,5 +84,6 @@ char	*get_next_line(int fd);
 //char	*read_and_join(int fd, char *str);
 //void	clean(char **str);
 //char	*ft_get_line(char **full_str);
+
 
 #endif

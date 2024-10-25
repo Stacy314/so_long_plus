@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apechkov <apechkov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anastasiia <anastasiia@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:44:06 by apechkov          #+#    #+#             */
-/*   Updated: 2024/10/22 15:18:39 by apechkov         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:51:51 by anastasiia       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ char **copy_map(char **map, int width, int height)
 
 void flood_fill(char **map, int x, int y, int width, int height)
 {
-    // if (x < 0 || x >= width || y < 0 || y >= height || map[y][x] == '1' 
-    //     || map[y][x] == 'F' || map[y][x] == 'E')
     if (x < 0 || x >= width || y < 0 || y >= height || map[y][x] == '1' 
         || map[y][x] == 'F')
         return;
@@ -50,31 +48,6 @@ void flood_fill(char **map, int x, int y, int width, int height)
     flood_fill(map, x, y + 1, width, height);
     flood_fill(map, x, y - 1, width, height);
 }
-
-// int check_exit(t_game *game, char **map_copy)
-// {
-//     int x;
-//     int y;
-
-//     y = 0;
-//     x = 0;
-//     while (y < game->map_height)
-//     {
-//         while (x < game->map_width)
-//         {
-//             if (map_copy[y][x] == 'E')
-//             {
-//                 if (map_copy[y][x + 1] == 'F' || map_copy[y][x - 1] == 'F' 
-//                     || map_copy[y + 1][x] == 'F' || map_copy[y - 1][x] == 'F')
-//                     return (0);
-//             }
-//             x++;
-//         }
-//         y++;
-//     }
-//     return (1);
-// }
-
 char **perform_flood_fill(t_game *game)
 {
     // Копіюємо карту для flood fill, щоб не змінювати оригінал
@@ -88,12 +61,6 @@ char **perform_flood_fill(t_game *game)
     // Запускаємо flood fill з позиції гравця
     flood_fill(map_copy, game->player_x, game->player_y,
         game->map_width, game->map_height);
-    // if (!check_exit(game, map_copy))
-    // {
-    //     ft_printf("Error\nExit is not reachable.\n");
-    //     free_map(map_copy, game->map_height);
-    //     return NULL;
-    // }
     return (map_copy);  // Повертаємо скопійовану карту після flood fill
 }
 int check_items_and_exit(t_game *game, char **map_copy)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: apechkov <apechkov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anastasiia <anastasiia@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 15:44:06 by apechkov          #+#    #+#             */
-/*   Updated: 2024/10/24 19:26:44 by apechkov         ###   ########.fr       */
+/*   Updated: 2024/10/13 22:27:23 by anastasiia       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,6 @@ void	load_map(t_game *game, char *filename)
 	int		line_length;
 
 	fd = open(filename, O_RDONLY);
-	//printf("fd: %d\n", fd);
-	//printf("filename: %s\n", filename);
 	if (fd < 0)
 		exit_with_error("Can't open map file");
 	y = 0;

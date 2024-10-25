@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anastasiia <anastasiia@student.42.fr>      +#+  +:+       +#+        */
+/*   By: apechkov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 19:13:24 by apechkov          #+#    #+#             */
-/*   Updated: 2024/10/08 16:38:24 by anastasiia       ###   ########.fr       */
+/*   Updated: 2024/04/05 19:13:26 by apechkov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return ((char *)s + i);
 }
-
-
 
 /*int main(void)
 {
